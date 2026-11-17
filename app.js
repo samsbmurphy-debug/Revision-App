@@ -18,6 +18,31 @@ const defaultData = () => ({ version:1, subjects:DEFAULT_NAMES.map((name,i)=>({i
 function load(){try{const raw=localStorage.getItem(KEY);if(!raw)return defaultData(); const obj=JSON.parse(raw);if(!obj||!Array.isArray(obj.subjects)||!Array.isArray(obj.sessions)||!Array.isArray(obj.topics))return defaultData();return {...defaultData(), ...obj,activity:Array.isArray(obj.activity)?obj.activity:[],settings:{...defaultData().settings,...obj.settings}};}catch{return defaultData();}}
 let data = load(), view='dashboard', weekShift=0, topicFilter='all', reviewFilter='all', focusId=null, alertId=null, toastTimeout=0;
 function save(){ try{localStorage.setItem(KEY,JSON.stringify(data));}catch{toast('Storage is full or unavailable. Export a backup from Settings.');}}
+/* Merge the published timetable into existing browser data without erasing
+   personally created or edited sessions. Removing a published slot stays removed. */
+function mergePublishedPlan(){
+  const plan=window.REVISION_FLOW_DECEMBER_PLAN_2026;
+  if(!Array.isArray(plan))return;
+  if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];
+  let changed=false;
+  for(const p of plan){
+    const key='christmas-2026:'+p.date+':'+p.time;
+    if(data.skippedPlanKeys.includes(key))continue;
+    if(data.sessions.some(s=>s.planKey===key))continue;
+    // Respect a user's own session if it already occupies this timetable slot.
+    if(data.sessions.some(s=>s.date===p.date&&s.time===p.time))continue;
+    let sub=subjectByName(p.subject);
+    if(!sub){
+      sub={id:uid(),name:p.subject,color:PALETTE[data.subjects.length%PALETTE.length]};
+      data.subjects.push(sub);
+    }
+    data.sessions.push({id:uid(),planKey:key,subjectId:sub.id,topicId:'',
+      title:p.title,date:p.date,time:p.time,duration:p.duration,status:'planned'});
+    changed=true;
+  }
+  if(changed)save();
+}
+
 function toast(msg){let node=$('#toast');node.textContent=msg;node.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>node.classList.remove('visible'),3300);}
 const subject = id=>data.subjects.find(x=>x.id===id)||{name:'Other',color:'#7b89a5'};
 const subjectByName = name=>data.subjects.find(x=>x.name.toLowerCase()===String(name||'').trim().toLowerCase());
@@ -98,7 +123,7 @@ if(kind==='complete_session'){let s=temp.sessions.find(x=>x.id===op.id);if(!s)th
 throw Error(`Unsupported operation type: ${String(kind)}`);}
 data=temp;save();render();toast(`Applied ${result.length} change${result.length===1?'':'s'} successfully.`);return result;}
 function handleAction(action,el){const id=el.dataset.id;
-switch(action){case 'add-session':openSessionModal(null,el.dataset.date||null);break;case 'edit-session':{const s=session(id);if(s)openSessionModal(s);break;}case 'session-options':sessionOptions(id);break;case 'delete-session':if(confirm('Delete this session?')){data.sessions=data.sessions.filter(s=>s.id!==id);save();closeModal();render();toast('Session deleted.');}break;
+switch(action){case 'add-session':openSessionModal(null,el.dataset.date||null);break;case 'edit-session':{const s=session(id);if(s)openSessionModal(s);break;}case 'session-options':sessionOptions(id);break;case 'delete-session':if(confirm('Delete this session?')){const removed=session(id);if(removed?.planKey){if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];if(!data.skippedPlanKeys.includes(removed.planKey))data.skippedPlanKeys.push(removed.planKey);}data.sessions=data.sessions.filter(s=>s.id!==id);save();closeModal();render();toast('Session deleted.');}break;
 case 'start-session':focusSession(id);break;case 'complete-session':markComplete(id);break;case 'open-session-chat':{let s=session(id);if(s)openChat(promptForSession(s));break;}case 'open-general-chat':openChat('Please help me revise GCSE material using active recall. Ask one question at a time, wait for my answer, mark it and adapt to my weaknesses.');break;case 'open-topic-chat':{const t=topic(id);if(t)openChat(promptForTopic(t));break;}
 case 'add-topic':openTopicModal();break;case 'edit-topic':{const t=topic(id);if(t)openTopicModal(t);break;}case 'delete-topic':if(confirm('Delete this topic?')){data.topics=data.topics.filter(t=>t.id!==id);data.sessions.forEach(s=>{if(s.topicId===id)s.topicId='';});save();closeModal();render();toast('Topic deleted.');}break;case 'review-topic':askReview(id);break;case 'rate-topic':reviewTopic(id,Number(el.dataset.rating));break;case 'filter-subject':topicFilter=id;render();break;case 'filter-review':reviewFilter=id;render();break;
 case 'prev-week':weekShift--;render();break;case 'next-week':weekShift++;render();break;case 'current-week':weekShift=0;render();break;
@@ -119,5 +144,5 @@ $('#top-settings').addEventListener('click',()=>navigate('settings'));$('.avatar
 setInterval(()=>{const timer=$('#focus-timer');if(timer&&focusId){const s=session(focusId);if(s?.startedAt){let elapsed=Math.max(0,Math.floor((Date.now()-new Date(s.startedAt).getTime())/1000));timer.textContent=`${pad(Math.floor(elapsed/60))}:${pad(elapsed%60)}`;}}},1000);
 setInterval(checkReminders,30000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkReminders();});
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-render();setTimeout(checkReminders,1500);
+mergePublishedPlan();render();setTimeout(checkReminders,1500);
 })();
