@@ -81,7 +81,17 @@ function mergePublishedPlan(){
     'christmas-2026:2026-11-25:20:40':'Food, health, sport and measure words',
     'christmas-2026:2026-11-27:20:40':'Free time, entertainment, hobbies and technology',
     'christmas-2026:2026-12-01:20:40':'Culture and festivals: Chinese New Year and celebrations',
-    'christmas-2026:2026-12-03:20:40':'Work, ambitions, future plans and opportunities'
+    'christmas-2026:2026-12-03:20:40':'Work, ambitions, future plans and opportunities',
+    // Match the previously published titles exactly so only untouched planned sessions are updated.
+    'christmas-2026:2026-11-24:18:20':'Speaking photo: description, speculation and opinions',
+    'christmas-2026:2026-12-11:18:20':'Listening, dictation, reading and translation skills',
+    'christmas-2026:2026-12-15:19:20':'Speaking: roleplay, follow-up questions and repair phrases',
+    'christmas-2026:2026-12-17:19:20':'Timed mixed practice: speaking, reading, listening and writing',
+    'christmas-2026:2026-12-09:20:40':'Poetry anthology: your studied cluster, comparison themes',
+    'christmas-2026:2026-12-12:19:00':'Poetry anthology: form, structure and comparative quotations',
+    'christmas-2026:2026-12-18:20:40':'Timed essays: Macbeth, A Christmas Carol and set texts',
+    'christmas-2026:2026-12-14:19:20':'Writing: 75-character email and 125-character blog',
+    'christmas-2026:2026-12-16:19:20':'Timed translation, writing and speaking accuracy'
   };
   for(const p of plan){
     const key='christmas-2026:'+p.date+':'+(p.time||'flex');
