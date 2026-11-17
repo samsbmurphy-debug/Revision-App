@@ -160,7 +160,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "18:20",
     "duration": 40,
     "subject": "Spanish",
-    "title": "Speaking photo: description, speculation and opinions"
+    "title": "Edexcel Spanish speaking: picture task description, speculation and conversation"
   },
   {
     "date": "2026-11-24",
@@ -531,7 +531,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "English Literature",
-    "title": "Poetry anthology: your studied cluster, comparison themes"
+    "title": "AQA Power and Conflict poetry: Ozymandias, London and My Last Duchess — power and control"
   },
   {
     "date": "2026-12-10",
@@ -573,7 +573,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "18:20",
     "duration": 40,
     "subject": "Spanish",
-    "title": "Listening, dictation, reading and translation skills"
+    "title": "Edexcel Spanish: listening dictation, reading comprehension and translation into English"
   },
   {
     "date": "2026-12-11",
@@ -615,7 +615,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:00",
     "duration": 60,
     "subject": "English Literature",
-    "title": "Poetry anthology: form, structure and comparative quotations"
+    "title": "AQA Power and Conflict poetry: Exposure, Remains and Poppies — effects of conflict"
   },
   {
     "date": "2026-12-12",
@@ -643,7 +643,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:20",
     "duration": 60,
     "subject": "Mandarin",
-    "title": "Writing: 75-character email and 125-character blog"
+    "title": "AQA Mandarin Higher writing: structured 75-character and open-ended 125-character tasks"
   },
   {
     "date": "2026-12-14",
@@ -671,7 +671,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:20",
     "duration": 60,
     "subject": "Spanish",
-    "title": "Speaking: roleplay, follow-up questions and repair phrases"
+    "title": "Edexcel Spanish speaking: read aloud, role-play and picture task conversation"
   },
   {
     "date": "2026-12-15",
@@ -692,7 +692,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:20",
     "duration": 60,
     "subject": "Mandarin",
-    "title": "Timed translation, writing and speaking accuracy"
+    "title": "AQA Mandarin: English-to-Chinese translation, writing and speaking accuracy"
   },
   {
     "date": "2026-12-16",
@@ -720,7 +720,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:20",
     "duration": 60,
     "subject": "Spanish",
-    "title": "Timed mixed practice: speaking, reading, listening and writing"
+    "title": "Edexcel Spanish mixed practice: read aloud, role-play, picture task, dictation and writing"
   },
   {
     "date": "2026-12-17",
@@ -755,7 +755,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "English Literature",
-    "title": "Timed essays: Macbeth, A Christmas Carol and set texts"
+    "title": "AQA Literature: essay planning for Macbeth, A Christmas Carol and Power and Conflict poetry"
   }
 ];
 window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
