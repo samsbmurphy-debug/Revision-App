@@ -41,7 +41,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "18:20",
     "duration": 40,
     "subject": "Biology",
-    "title": "Cell biology: microscopy, mitosis and transport practicals"
+    "title": "Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations"
   },
   {
     "date": "2026-11-19",
@@ -699,7 +699,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Biology",
-    "title": "Required practicals, data skills and mixed Biology questions"
+    "title": "Biology practicals: osmosis methods, percentage change and mixed recall"
   },
   {
     "date": "2026-12-17",
