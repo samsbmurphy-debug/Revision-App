@@ -2,6 +2,13 @@
    Public timetable data, not an API credential. */
 window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   {
+    "date": "2026-11-17",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Biology",
+    "title": "Cell biology: organelles, microscopy and transport — active recall"
+  },
+  {
     "date": "2026-11-18",
     "time": "18:00",
     "duration": 60,
