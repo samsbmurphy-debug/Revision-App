@@ -984,3 +984,12 @@ window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
     "title": "Probability: Venn diagrams, trees and conditional probability"
   }
 ];
+
+/* Flexible Economics & Investing: 60m Mon/Tue/Thu/Fri; 120m Sat/Sun; Wednesday off. */
+(function(){
+ const focus={0:'Economics reading, analysis and applied questions',1:'Microeconomics: theory and quantitative reasoning',2:'Investing: company financials and valuation',4:'Macroeconomics: policy, data and case studies',5:'Markets: risk, behavioural economics and portfolio theory',6:'Deep research: company analysis and paper portfolio'};
+ for(let d=new Date('2026-11-19T12:00:00Z');d<=new Date('2026-12-18T12:00:00Z');d.setUTCDate(d.getUTCDate()+1)){
+ const day=d.getUTCDay();if(day===3)continue;
+ window.REVISION_FLOW_DECEMBER_PLAN_2026.push({date:d.toISOString().slice(0,10),time:'',duration:(day===0||day===6)?120:60,subject:'Economics & Investing',title:focus[day]});
+ }
+})();
