@@ -1,5 +1,5 @@
-/* Revision Flow Christmas 2026: published, additive study plan.
-   Public timetable data, not an API credential. */
+/* Revision Flow Christmas 2026. Public timetable data, not an API credential.
+   The prior weekend plan is used once to migrate already saved browser sessions. */
 window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   {
     "date": "2026-11-17",
@@ -87,59 +87,38 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   },
   {
     "date": "2026-11-21",
-    "time": "17:00",
+    "time": "15:00",
     "duration": 60,
     "subject": "Maths",
     "title": "Algebra: indices, surds, expanding and factorising"
   },
   {
     "date": "2026-11-21",
-    "time": "18:20",
-    "duration": 40,
+    "time": "16:20",
+    "duration": 60,
     "subject": "Chemistry",
     "title": "Bonding, structure, properties and nanoparticles"
   },
   {
     "date": "2026-11-21",
-    "time": "19:20",
+    "time": "17:40",
     "duration": 60,
     "subject": "Mandarin",
     "title": "Home and local area: places, amenities and comparison"
   },
   {
     "date": "2026-11-21",
-    "time": "20:40",
-    "duration": 50,
+    "time": "19:00",
+    "duration": 60,
     "subject": "Further Maths",
     "title": "Polynomial division, remainder and factor theorem"
   },
   {
-    "date": "2026-11-22",
-    "time": "17:00",
-    "duration": 60,
-    "subject": "English Language",
-    "title": "Paper 1 Q3: narrative structure, shifts in focus and tension"
-  },
-  {
-    "date": "2026-11-22",
-    "time": "18:20",
-    "duration": 40,
-    "subject": "Biology",
-    "title": "Organisation: enzymes, digestion, heart and circulation"
-  },
-  {
-    "date": "2026-11-22",
-    "time": "19:20",
+    "date": "2026-11-21",
+    "time": "20:20",
     "duration": 60,
     "subject": "Geography",
     "title": "Tectonic case studies: contrasting impacts and responses"
-  },
-  {
-    "date": "2026-11-22",
-    "time": "20:40",
-    "duration": 50,
-    "subject": "Spanish",
-    "title": "Present and imperfect subjunctive: triggers and accuracy"
   },
   {
     "date": "2026-11-23",
@@ -276,59 +255,38 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   },
   {
     "date": "2026-11-28",
-    "time": "17:00",
+    "time": "15:00",
     "duration": 60,
     "subject": "Biology",
     "title": "Bioenergetics: photosynthesis, respiration and practicals"
   },
   {
     "date": "2026-11-28",
-    "time": "18:20",
-    "duration": 40,
+    "time": "16:20",
+    "duration": 60,
     "subject": "Maths",
     "title": "Graphs: linear, quadratic, cubic, reciprocal and transformations"
   },
   {
     "date": "2026-11-28",
-    "time": "19:20",
+    "time": "17:40",
     "duration": 60,
     "subject": "English Language",
     "title": "Paper 1 Q5: plan and write a DPZZFE creative narrative"
   },
   {
     "date": "2026-11-28",
-    "time": "20:40",
-    "duration": 50,
+    "time": "19:00",
+    "duration": 60,
     "subject": "Spanish",
     "title": "Family and friendships: relationships and emotions"
   },
   {
-    "date": "2026-11-29",
-    "time": "17:00",
+    "date": "2026-11-28",
+    "time": "20:20",
     "duration": 60,
     "subject": "Physics",
     "title": "Atomic structure: isotopes, radiation and half-life"
-  },
-  {
-    "date": "2026-11-29",
-    "time": "18:20",
-    "duration": 40,
-    "subject": "English Literature",
-    "title": "A Christmas Carol: Scrooge, Marley and redemption"
-  },
-  {
-    "date": "2026-11-29",
-    "time": "19:20",
-    "duration": 60,
-    "subject": "Mandarin",
-    "title": "Holidays, travel, transport and directions"
-  },
-  {
-    "date": "2026-11-29",
-    "time": "20:40",
-    "duration": 50,
-    "subject": "Geography",
-    "title": "Optional ecosystem: your hot desert/cold environment unit"
   },
   {
     "date": "2026-11-30",
@@ -465,59 +423,38 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   },
   {
     "date": "2026-12-05",
-    "time": "17:00",
+    "time": "15:00",
     "duration": 60,
     "subject": "English Language",
     "title": "Paper 2 Q3: analyse language and writers' effects"
   },
   {
     "date": "2026-12-05",
-    "time": "18:20",
-    "duration": 40,
+    "time": "16:20",
+    "duration": 60,
     "subject": "Physics",
     "title": "Momentum, pressure, elasticity and required practicals"
   },
   {
     "date": "2026-12-05",
-    "time": "19:20",
+    "time": "17:40",
     "duration": 60,
     "subject": "Mandarin",
     "title": "Grammar: time markers, 了, 过 and word order"
   },
   {
     "date": "2026-12-05",
-    "time": "20:40",
-    "duration": 50,
+    "time": "19:00",
+    "duration": 60,
     "subject": "Further Maths",
     "title": "Coordinate geometry, circle equations and tangents"
   },
   {
-    "date": "2026-12-06",
-    "time": "17:00",
+    "date": "2026-12-05",
+    "time": "20:20",
     "duration": 60,
     "subject": "Chemistry",
     "title": "Organic chemistry: hydrocarbons, crude oil and polymers"
-  },
-  {
-    "date": "2026-12-06",
-    "time": "18:20",
-    "duration": 40,
-    "subject": "Geography",
-    "title": "UK physical landscape option: landforms and case studies"
-  },
-  {
-    "date": "2026-12-06",
-    "time": "19:20",
-    "duration": 60,
-    "subject": "English Literature",
-    "title": "Modern prose/drama: your set text, characters and key quotations"
-  },
-  {
-    "date": "2026-12-06",
-    "time": "20:40",
-    "duration": 50,
-    "subject": "Maths",
-    "title": "Angles, polygons, constructions and loci"
   },
   {
     "date": "2026-12-07",
@@ -654,59 +591,38 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   },
   {
     "date": "2026-12-12",
-    "time": "17:00",
+    "time": "15:00",
     "duration": 60,
     "subject": "Maths",
     "title": "Vectors, geometric proof and multi-step reasoning"
   },
   {
     "date": "2026-12-12",
-    "time": "18:20",
-    "duration": 40,
+    "time": "16:20",
+    "duration": 60,
     "subject": "Chemistry",
     "title": "Chemistry of the atmosphere and pollution"
   },
   {
     "date": "2026-12-12",
-    "time": "19:20",
+    "time": "17:40",
     "duration": 60,
     "subject": "Mandarin",
     "title": "Listening, reading and character recognition practice"
   },
   {
     "date": "2026-12-12",
-    "time": "20:40",
-    "duration": 50,
+    "time": "19:00",
+    "duration": 60,
     "subject": "English Literature",
     "title": "Poetry anthology: form, structure and comparative quotations"
   },
   {
-    "date": "2026-12-13",
-    "time": "17:00",
+    "date": "2026-12-12",
+    "time": "20:20",
     "duration": 60,
     "subject": "Biology",
     "title": "Ecology: ecosystems, cycles, biodiversity and sampling"
-  },
-  {
-    "date": "2026-12-13",
-    "time": "18:20",
-    "duration": 40,
-    "subject": "Geography",
-    "title": "Resource management: energy, water and food security"
-  },
-  {
-    "date": "2026-12-13",
-    "time": "19:20",
-    "duration": 60,
-    "subject": "Spanish",
-    "title": "Writing: extended answers with complex structures"
-  },
-  {
-    "date": "2026-12-13",
-    "time": "20:40",
-    "duration": 50,
-    "subject": "Maths",
-    "title": "Probability: Venn diagrams, trees and conditional probability"
   },
   {
     "date": "2026-12-14",
@@ -840,5 +756,231 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "duration": 50,
     "subject": "English Literature",
     "title": "Timed essays: Macbeth, A Christmas Carol and set texts"
+  }
+];
+window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
+  {
+    "date": "2026-11-21",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Algebra: indices, surds, expanding and factorising"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Chemistry",
+    "title": "Bonding, structure, properties and nanoparticles"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "Home and local area: places, amenities and comparison"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Further Maths",
+    "title": "Polynomial division, remainder and factor theorem"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 1 Q3: narrative structure, shifts in focus and tension"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Biology",
+    "title": "Organisation: enzymes, digestion, heart and circulation"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Geography",
+    "title": "Tectonic case studies: contrasting impacts and responses"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Spanish",
+    "title": "Present and imperfect subjunctive: triggers and accuracy"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Bioenergetics: photosynthesis, respiration and practicals"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Maths",
+    "title": "Graphs: linear, quadratic, cubic, reciprocal and transformations"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 1 Q5: plan and write a DPZZFE creative narrative"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Spanish",
+    "title": "Family and friendships: relationships and emotions"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "Atomic structure: isotopes, radiation and half-life"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "English Literature",
+    "title": "A Christmas Carol: Scrooge, Marley and redemption"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "Holidays, travel, transport and directions"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Geography",
+    "title": "Optional ecosystem: your hot desert/cold environment unit"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 2 Q3: analyse language and writers' effects"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Physics",
+    "title": "Momentum, pressure, elasticity and required practicals"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "Grammar: time markers, 了, 过 and word order"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Further Maths",
+    "title": "Coordinate geometry, circle equations and tangents"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "Organic chemistry: hydrocarbons, crude oil and polymers"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Geography",
+    "title": "UK physical landscape option: landforms and case studies"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Modern prose/drama: your set text, characters and key quotations"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Maths",
+    "title": "Angles, polygons, constructions and loci"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Vectors, geometric proof and multi-step reasoning"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Chemistry",
+    "title": "Chemistry of the atmosphere and pollution"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "Listening, reading and character recognition practice"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "English Literature",
+    "title": "Poetry anthology: form, structure and comparative quotations"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "17:00",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Ecology: ecosystems, cycles, biodiversity and sampling"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "18:20",
+    "duration": 40,
+    "subject": "Geography",
+    "title": "Resource management: energy, water and food security"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "19:20",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Writing: extended answers with complex structures"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "20:40",
+    "duration": 50,
+    "subject": "Maths",
+    "title": "Probability: Venn diagrams, trees and conditional probability"
   }
 ];
