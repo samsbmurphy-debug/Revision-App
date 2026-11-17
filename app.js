@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const KEY = 'revision-flow-v1';
-const PALETTE = ['#5369ee','#16a884','#e3a04e','#956af1','#e76f87','#3795d8','#d28e4c','#6b83a7','#c66abd','#6a9c78'];
+const PALETTE = ['#5369ee','#16a884','#e3a04e','#956af1','#e76f87','#3795d8','#d28e4c','#6b83a7','#c66abd','#6a9c78','#266a91'];
 const DEFAULT_NAMES = ['Maths','Further Maths','English Language','English Literature','Biology','Chemistry','Physics','Spanish','Mandarin','Geography','Economics & Investing'];
 const $ = q => document.querySelector(q);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
