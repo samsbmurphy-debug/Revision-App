@@ -37,6 +37,35 @@ function mergePublishedPlan(){
     save();
   }
   if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];
+  // One-time migration for changed weekend rules. Only old built-in Saturday
+  // slots are replaced; manually edited sessions and completed work remain.
+  // Planned Sundays are cleared once, so future Sundays can be scheduled ad hoc.
+  if(!data.christmasWeekendMigrationV2 && Array.isArray(window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026)){
+    const prior=window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026;
+    const isSun=p=>new Date(p.date+'T12:00:00Z').getUTCDay()===0;
+    const sundays=new Set(prior.filter(isSun).map(p=>p.date));
+    const sat=prior.filter(p=>!isSun(p));
+    const byOldKey=new Map(sat.map(p=>['christmas-2026:'+p.date+':'+p.time,p]));
+    // Preserve any intentionally skipped Saturday slot at its new time.
+    const newSaturdayTimes=['15:00','16:20','17:40','19:00','20:20'];
+    for(const date of new Set(sat.map(p=>p.date))){
+      const originals=sat.filter(p=>p.date===date).sort((a,b)=>a.time.localeCompare(b.time));
+      originals.forEach((p,i)=>{
+        const oldKey='christmas-2026:'+date+':'+p.time;
+        const newKey='christmas-2026:'+date+':'+newSaturdayTimes[i];
+        if(data.skippedPlanKeys.includes(oldKey)&&!data.skippedPlanKeys.includes(newKey))data.skippedPlanKeys.push(newKey);
+      });
+    }
+    data.sessions=data.sessions.filter(s=>{
+      if(s.status!=='planned')return true;
+      if(sundays.has(s.date))return false;
+      const previous=byOldKey.get(s.planKey);
+      if(previous&&s.title===previous.title&&s.time===previous.time)return false;
+      return true;
+    });
+    data.christmasWeekendMigrationV2=true;
+    save();
+  }
   let changed=false;
   for(const p of plan){
     const key='christmas-2026:'+p.date+':'+p.time;
