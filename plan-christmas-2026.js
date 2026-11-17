@@ -55,7 +55,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Mandarin",
-    "title": "Family and friends: opinions, descriptions and characters"
+    "title": "Speaking: role-play foundations — questions, requests and clear replies"
   },
   {
     "date": "2026-11-20",
@@ -104,7 +104,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "17:40",
     "duration": 60,
     "subject": "Mandarin",
-    "title": "Home and local area: places, amenities and comparison"
+    "title": "Speaking: picture task — people, actions, locations and opinions"
   },
   {
     "date": "2026-11-21",
@@ -132,7 +132,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "18:20",
     "duration": 40,
     "subject": "Mandarin",
-    "title": "School: timetable, subjects, rules and routine"
+    "title": "Speaking: school and daily life — past, present and future answers"
   },
   {
     "date": "2026-11-23",
@@ -195,7 +195,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Mandarin",
-    "title": "Food, health, sport and measure words"
+    "title": "Speaking: conversation practice — family, health, hobbies and follow-ups"
   },
   {
     "date": "2026-11-26",
@@ -251,7 +251,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Mandarin",
-    "title": "Free time, entertainment, hobbies and technology"
+    "title": "Speaking: role-play scenarios — travel, shopping and directions"
   },
   {
     "date": "2026-11-28",
@@ -342,7 +342,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Mandarin",
-    "title": "Culture and festivals: Chinese New Year and celebrations"
+    "title": "Speaking: timed mock — role-play, picture task and conversation"
   },
   {
     "date": "2026-12-02",
@@ -391,7 +391,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Mandarin",
-    "title": "Work, ambitions, future plans and opportunities"
+    "title": "Speaking: final rehearsal — spontaneous answers, fluency and corrections"
   },
   {
     "date": "2026-12-04",
