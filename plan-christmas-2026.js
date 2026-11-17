@@ -3,8 +3,8 @@
 window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   {
     "date": "2026-11-17",
-    "time": "20:40",
-    "duration": 50,
+    "time": "20:05",
+    "duration": 60,
     "subject": "Biology",
     "title": "Cell biology: organelles, microscopy and transport — active recall"
   },
