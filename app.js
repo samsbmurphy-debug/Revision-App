@@ -67,10 +67,24 @@ function mergePublishedPlan(){
     save();
   }
   let changed=false;
+  // Update only untouched, still-planned published sessions after tutor feedback.
+  // Preserve completed sessions and any titles the user edited locally.
+  const previousPublishedTitles={
+    'christmas-2026:2026-11-19:18:20':'Cell biology: microscopy, mitosis and transport practicals',
+    'christmas-2026:2026-12-16:20:40':'Required practicals, data skills and mixed Biology questions'
+  };
   for(const p of plan){
     const key='christmas-2026:'+p.date+':'+p.time;
     if(data.skippedPlanKeys.includes(key))continue;
-    if(data.sessions.some(s=>s.planKey===key))continue;
+    const existing=data.sessions.find(s=>s.planKey===key);
+    if(existing){
+      const previousTitle=previousPublishedTitles[key];
+      if(previousTitle && existing.status==='planned' && existing.title===previousTitle && p.title!==previousTitle){
+        existing.title=p.title;
+        changed=true;
+      }
+      continue;
+    }
     // Respect a user's own session if it already occupies this timetable slot.
     if(data.sessions.some(s=>s.date===p.date&&s.time===p.time))continue;
     let sub=subjectByName(p.subject);
