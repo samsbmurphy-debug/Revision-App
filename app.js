@@ -23,6 +23,19 @@ function save(){ try{localStorage.setItem(KEY,JSON.stringify(data));}catch{toast
 function mergePublishedPlan(){
   const plan=window.REVISION_FLOW_DECEMBER_PLAN_2026;
   if(!Array.isArray(plan))return;
+  // Retire a previously published slot when the user corrects its time.
+  const legacyKey='christmas-2026:2026-11-17:20:40';
+  const newSession=plan.find(s=>s.date==='2026-11-17'&&s.subject==='Biology'&&s.time==='20:05');
+  const legacy=data.sessions.find(s=>s.planKey===legacyKey&&s.status==='planned'&&s.title==='Cell biology: organelles, microscopy and transport — active recall');
+  if(newSession&&legacy){
+    if(data.sessions.some(s=>s!==legacy&&s.date===newSession.date&&s.time===newSession.time)){
+      data.sessions=data.sessions.filter(s=>s!==legacy);
+    }else{
+      legacy.time=newSession.time;legacy.duration=newSession.duration;
+      legacy.planKey='christmas-2026:'+newSession.date+':'+newSession.time;
+    }
+    save();
+  }
   if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];
   let changed=false;
   for(const p of plan){
