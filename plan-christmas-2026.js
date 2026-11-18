@@ -16,20 +16,6 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "title": "Algebraic fractions, surds and advanced factorisation"
   },
   {
-    "date": "2026-11-18",
-    "time": "19:20",
-    "duration": 60,
-    "subject": "Spanish",
-    "title": "Present, preterite and imperfect: narrating experiences"
-  },
-  {
-    "date": "2026-11-18",
-    "time": "20:40",
-    "duration": 50,
-    "subject": "Chemistry",
-    "title": "Atomic structure, electron arrangement and periodic trends"
-  },
-  {
     "date": "2026-11-19",
     "time": "17:00",
     "duration": 60,
@@ -83,7 +69,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "20:40",
     "duration": 50,
     "subject": "Spanish",
-    "title": "Future and conditional: plans and hypothetical situations"
+    "title": "Spanish catch-up: present, preterite and imperfect; future and conditional — challenging practice"
   },
   {
     "date": "2026-11-21",
@@ -97,7 +83,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "16:20",
     "duration": 60,
     "subject": "Chemistry",
-    "title": "Bonding, structure, properties and nanoparticles"
+    "title": "Chemistry catch-up: atomic structure, electron arrangement, periodic trends and bonding"
   },
   {
     "date": "2026-11-21",
