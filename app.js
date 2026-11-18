@@ -40,6 +40,24 @@ function mergePublishedPlan(){
     save();
   }
   if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];
+  // Nov 18 catch-up: the untouched, missed Spanish and Chemistry slots were
+  // incorporated into Nov 20 and Nov 21 sessions so no extra late-night study is needed.
+  // Completed, active or manually edited local work is always preserved.
+  if(!data.nov18CatchupMigration2026){
+    const missed=[
+      {key:'christmas-2026:2026-11-18:19:20',title:'Present, preterite and imperfect: narrating experiences'},
+      {key:'christmas-2026:2026-11-18:20:40',title:'Atomic structure, electron arrangement and periodic trends'}
+    ];
+    for(const m of missed){
+      const existing=data.sessions.find(s=>s.planKey===m.key);
+      if(existing&&existing.status==='planned'&&existing.title===m.title){
+        data.sessions=data.sessions.filter(s=>s!==existing);
+      }
+      if(!data.skippedPlanKeys.includes(m.key))data.skippedPlanKeys.push(m.key);
+    }
+    data.nov18CatchupMigration2026=true;
+    save();
+  }
   // One-time migration for changed weekend rules. Only old built-in Saturday
   // slots are replaced; manually edited sessions and completed work remain.
   // Planned Sundays are cleared once, so future Sundays can be scheduled ad hoc.
@@ -73,6 +91,8 @@ function mergePublishedPlan(){
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
   const previousPublishedTitles={
+    'christmas-2026:2026-11-20:20:40':'Future and conditional: plans and hypothetical situations',
+    'christmas-2026:2026-11-21:16:20':'Bonding, structure, properties and nanoparticles',
     'christmas-2026:2026-11-19:18:20':'Cell biology: microscopy, mitosis and transport practicals',
     'christmas-2026:2026-12-16:20:40':'Required practicals, data skills and mixed Biology questions',
     'christmas-2026:2026-11-19:20:40':'Family and friends: opinions, descriptions and characters',
