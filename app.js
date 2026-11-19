@@ -237,7 +237,7 @@ const session = id=>data.sessions.find(x=>x.id===id);
 const sessionDay = s => `${s.date}T${s.time || '00:00'}:00`;
 const timeLabel = s => s.time || 'Flexible';
 const bySessionTime = (a,b) => (a.time||'99:99').localeCompare(b.time||'99:99');
-const isPast = s => s.time ? new Date(sessionDay(s)).getTime() < Date.now() : s.date < today();
+const isPast = s => /^(OPTIONAL Friday|FLEXIBLE)/.test(s.title||'') ? false : (s.time ? new Date(sessionDay(s)).getTime() < Date.now() : s.date < today());
 const dueTopics = () => data.topics.filter(t=>!t.nextReview || t.nextReview<=today());
 const doneToday = () => data.activity.filter(a=>a.type==='session'&&a.date===today()).reduce((n,a)=>n+(Number(a.minutes)||0),0);
 const doneWeek = () => data.activity.filter(a=>a.type==='session'&&a.date>=addDays(today(),-6)&&a.date<=today()).reduce((n,a)=>n+(Number(a.minutes)||0),0);
