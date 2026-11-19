@@ -23,13 +23,6 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "title": "Number: fractions, percentages, standard form and error bounds"
   },
   {
-    "date": "2026-11-19",
-    "time": "20:10",
-    "duration": 40,
-    "subject": "Biology",
-    "title": "Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations"
-  },
-  {
     "date": "2026-11-22",
     "time": "",
     "duration": 50,
@@ -160,7 +153,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "18:00",
     "duration": 60,
     "subject": "Biology",
-    "title": "Infection and response: pathogens, immunity, medicines"
+    "title": "Biology consolidation: cell biology corrections (mitosis, bacterial DNA, osmosis and microscopy) + infection and response"
   },
   {
     "date": "2026-11-25",
@@ -969,7 +962,10 @@ window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
  const focus={0:'Economics reading, analysis and applied questions',1:'Microeconomics: theory and quantitative reasoning',2:'Investing: company financials and valuation',4:'Macroeconomics: policy, data and case studies',5:'Markets: risk, behavioural economics and portfolio theory',6:'Deep research: company analysis and paper portfolio'};
  for(let d=new Date('2026-11-19T12:00:00Z');d<=new Date('2026-12-18T12:00:00Z');d.setUTCDate(d.getUTCDate()+1)){
  const day=d.getUTCDay();if(day===3)continue;
- window.REVISION_FLOW_DECEMBER_PLAN_2026.push({date:d.toISOString().slice(0,10),time:'',duration:(day===0||day===6)?120:60,subject:'Economics & Investing',title:focus[day]});
+ const date=d.toISOString().slice(0,10);
+ if(date==='2026-11-19')continue; // Missed Thursday work is moved into the following weekend.
+ const catchup=(date==='2026-11-21'||date==='2026-11-22');
+ window.REVISION_FLOW_DECEMBER_PLAN_2026.push({date,time:'',duration:catchup?150:((day===0||day===6)?120:60),subject:'Economics & Investing',title:catchup?focus[day]+' + 30m macroeconomics catch-up':focus[day]});
  }
 })();
 
