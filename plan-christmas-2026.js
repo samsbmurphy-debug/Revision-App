@@ -972,3 +972,28 @@ window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
  window.REVISION_FLOW_DECEMBER_PLAN_2026.push({date:d.toISOString().slice(0,10),time:'',duration:(day===0||day===6)?120:60,subject:'Economics & Investing',title:focus[day]});
  }
 })();
+
+
+/* Daily Maths challenge: an additional flexible 30-minute session.
+   No fixed time, to avoid clashes with GCSE timetable or Saturday routines.
+   Sundays retain no other fixed revision sessions. */
+(function(){
+ const focus=[
+  'Grade 9 Maths challenge: numerical reasoning, bounds and proof',
+  'Grade 9 Maths challenge: non-routine algebra and equations',
+  'Grade 9 Maths challenge: geometric proof and circle theorems',
+  'Grade 9 Maths challenge: trigonometry and 3D problems',
+  'Grade 9 Maths challenge: functions, graphs and transformations',
+  'Grade 9 Maths challenge: probability and statistics reasoning',
+  'Grade 9 Maths challenge: vectors, ratios and proportional reasoning'
+ ];
+ for(let d=new Date('2026-11-19T12:00:00Z');d<=new Date('2026-12-18T12:00:00Z');d.setUTCDate(d.getUTCDate()+1)){
+  window.REVISION_FLOW_DECEMBER_PLAN_2026.push({
+   date:d.toISOString().slice(0,10),
+   time:'',
+   duration:30,
+   subject:'Maths',
+   title:focus[d.getUTCDay()]+' — switch topic on mastery'
+  });
+ }
+})();
