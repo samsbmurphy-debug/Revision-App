@@ -40,6 +40,33 @@ function mergePublishedPlan(){
     save();
   }
   if(!Array.isArray(data.skippedPlanKeys))data.skippedPlanKeys=[];
+  // Later start on Nov 19: preserve completed, active and user-edited sessions.
+  // Incorporate the displaced English practice into the Nov 25 English session.
+  if(!data.nov19LaterStartMigration2026){
+    const moved=[
+      {oldTime:'17:00',newTime:'19:00',title:'Number: fractions, percentages, standard form and error bounds'},
+      {oldTime:'18:20',newTime:'20:10',title:'Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations'},
+      {oldTime:'20:40',newTime:'21:00',title:'Speaking: role-play foundations — questions, requests and clear replies'}
+    ];
+    for(const m of moved){
+      const oldKey='christmas-2026:2026-11-19:'+m.oldTime;
+      const newKey='christmas-2026:2026-11-19:'+m.newTime;
+      const existing=data.sessions.find(x=>x.planKey===oldKey);
+      if(existing&&existing.status==='planned'&&existing.title===m.title){
+        if(!data.sessions.some(x=>x!==existing&&x.date==='2026-11-19'&&x.time===m.newTime)){
+          existing.time=m.newTime;existing.planKey=newKey;
+        }
+      }
+      if(!data.skippedPlanKeys.includes(oldKey))data.skippedPlanKeys.push(oldKey);
+    }
+    const englishKey='christmas-2026:2026-11-19:19:20';
+    const english=data.sessions.find(x=>x.planKey===englishKey);
+    if(english&&english.status==='planned'&&english.title==='Paper 1 Q2: precise language analysis with 2 developed quotations'){
+      data.sessions=data.sessions.filter(x=>x!==english);
+    }
+    if(!data.skippedPlanKeys.includes(englishKey))data.skippedPlanKeys.push(englishKey);
+    data.nov19LaterStartMigration2026=true;save();
+  }
   // Nov 18 catch-up: the untouched, missed Spanish and Chemistry slots were
   // incorporated into Nov 20 and Nov 21 sessions so no extra late-night study is needed.
   // Completed, active or manually edited local work is always preserved.
@@ -91,6 +118,7 @@ function mergePublishedPlan(){
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
   const previousPublishedTitles={
+    'christmas-2026:2026-11-25:19:20':'Paper 1 Q4: evaluate a viewpoint with alternative interpretations',
     'christmas-2026:2026-11-20:20:40':'Future and conditional: plans and hypothetical situations',
     'christmas-2026:2026-11-21:16:20':'Bonding, structure, properties and nanoparticles',
     'christmas-2026:2026-11-19:18:20':'Cell biology: microscopy, mitosis and transport practicals',
