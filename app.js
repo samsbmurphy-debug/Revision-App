@@ -114,6 +114,25 @@ function mergePublishedPlan(){
     data.christmasWeekendMigrationV2=true;
     save();
   }
+  // User moved the Nov 19 Mandarin speaking practice to flexible Sunday Nov 22.
+  // Preserve completed, active and personally edited records.
+  if(!data.nov19MandarinSundayMigration2026){
+    const oldKeys=['christmas-2026:2026-11-19:20:40','christmas-2026:2026-11-19:21:00'];
+    const newKey='christmas-2026:2026-11-22:flex';
+    const title='Speaking: role-play foundations — questions, requests and clear replies';
+    const candidates=data.sessions.filter(x=>oldKeys.includes(x.planKey)&&x.status==='planned'&&x.title===title);
+    const current=data.sessions.find(x=>x.planKey===newKey);
+    if(!current&&candidates.length){
+      const target=candidates[candidates.length-1];
+      target.date='2026-11-22';target.time='';target.planKey=newKey;
+    }
+    for(const key of oldKeys){
+      if(!data.skippedPlanKeys.includes(key))data.skippedPlanKeys.push(key);
+    }
+    // Discard duplicate untouched old versions, if the user has one.
+    data.sessions=data.sessions.filter(x=>!(oldKeys.includes(x.planKey)&&x.status==='planned'&&x.title===title));
+    data.nov19MandarinSundayMigration2026=true;save();
+  }
   let changed=false;
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
