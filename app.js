@@ -162,6 +162,19 @@ function mergePublishedPlan(){
     }
     data.nov19MathsOnlyCatchupMigration2026=true;save();
   }
+  // Rebalance the published plan from 20 Nov: remove only untouched,
+  // uncompleted old scheduled slots. Retain manually edited, active, and
+  // completed sessions and user-created work.
+  if(!data.nov20BalancedHoursMigration2026){
+    const former=window.REVISION_FLOW_PRE_REBALANCE_PLAN_2026||[];
+    const oldKey=p=>'christmas-2026:'+p.date+':'+(p.time||'flex');
+    const matchesOld=s=>former.some(p=>oldKey(p)===s.planKey
+      && p.date===s.date && p.time===s.time && p.duration===s.duration
+      && p.title===s.title && p.subject===subject(s.subjectId).name);
+    data.sessions=data.sessions.filter(s=>
+      !s.planKey||s.date<'2026-11-20'||s.status!=='planned'||!matchesOld(s));
+    data.nov20BalancedHoursMigration2026=true;save();
+  }
   let changed=false;
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
@@ -190,7 +203,7 @@ function mergePublishedPlan(){
     'christmas-2026:2026-12-16:19:20':'Timed translation, writing and speaking accuracy'
   };
   for(const p of plan){
-    const key='christmas-2026:'+p.date+':'+(p.time||'flex');
+    const key='christmas-2026:'+p.date+':'+(p.time||('flex:'+p.subject));
     if(data.skippedPlanKeys.includes(key))continue;
     const existing=data.sessions.find(s=>s.planKey===key);
     if(existing){
@@ -247,7 +260,7 @@ return header('THE BIG PICTURE',`Good ${new Date().getHours()<12?'morning':new D
 function empty(icon,title,body,action=''){return `<div class="empty"><div class="empty-symbol">${icon}</div><strong>${esc(title)}</strong><p>${esc(body)}</p>${action}</div>`;}
 function weekDates(){const d=new Date(`${today()}T12:00:00`);const offset=(d.getDay()+6)%7;d.setDate(d.getDate()-offset+weekShift*7);return Array.from({length:7},(_,i)=>{const next=new Date(d);next.setDate(d.getDate()+i);return dateStr(next);});}
 function renderTimetable(){const dates=weekDates(),start=dates[0],end=dates[6];return header('STRUCTURE CREATES FREEDOM','Your revision timetable','Plan realistic sessions, move them when needed, and keep momentum.',btn('+ New session','add-session'))+
-(data.publishedPlanEnabled?`<div class="secondary-panel" style="margin:0 0 18px;padding:14px 18px"><strong>Timetable updated · Economics & Investing</strong><p>Mon/Tue/Thu/Fri: flexible 1 hour; Wednesday: none; Saturday and Sunday: flexible 2 hours each. GCSE sessions stay in place. Tap a flexible session → Edit to choose a start time, or Start now. Mandarin speaking is provisionally expected on 4 December; scheduled Mandarin sessions before then now focus on speaking, not word recap.</p></div>`:'')+
+(data.publishedPlanEnabled?`<div class="secondary-panel" style="margin:0 0 18px;padding:14px 18px"><strong>Timetable balanced · 16–20 hours per week</strong><p>Monday, Tuesday and Thursday: 16:30–21:00 with 20-minute breaks; Wednesday: 18:00–19:50; Saturday: 16:00–21:00. Friday sessions are optional. Sunday learning, Economics and Maths are flexible, with no fixed time. Core revision is 16 hours; optional Friday and Sunday increase it to 20 hours. Maths, English and Spanish are prioritised, with Saturday sessions for unfamiliar Mandarin and Science Paper 2 material.</p></div>`:'')+
 `<section class="panel"><div class="panel-header" style="align-items:center"><div><h2>Weekly planner</h2><div class="panel-subtitle">Tap any session to start, edit or complete it</div></div><div class="week-tools"><button class="btn small secondary" data-action="prev-week" aria-label="Previous week">←</button><span class="week-label">${prettyDate(start)} – ${prettyDate(end)}</span><button class="btn small secondary" data-action="next-week" aria-label="Next week">→</button><button class="btn small ghost" data-action="current-week">Today</button></div></div><div class="week-grid">${dates.map(date=>{const ss=data.sessions.filter(s=>s.date===date).sort(bySessionTime);const d=new Date(`${date}T12:00:00`);return `<div class="day-card ${date===today()?'today':''}"><div class="day-head"><span>${d.toLocaleDateString('en-GB',{weekday:'short'})}</span><strong>${d.getDate()}</strong></div>${ss.map(s=>`<button class="week-session" style="--subject:${subject(s.subjectId).color}" data-action="session-options" data-id="${s.id}"><strong>${esc(subject(s.subjectId).name)}</strong><small>${esc(timeLabel(s))} · ${s.duration}m ${s.status==='complete'?'✓':''}</small></button>`).join('')}<button class="day-add" data-action="add-session" data-date="${date}" aria-label="Add revision on ${date}">+</button></div>`;}).join('')}</div></section><div class="secondary-panel"><strong style="font-size:12px">A timetable you can recover from</strong><p>Missed sessions aren't automatically marked as complete. Move them to another day or delete them; your progress figures only count revision you actually finish.</p></div>`;}
 function renderTopics(){let ts=data.topics.filter(t=>(topicFilter==='all'||t.subjectId===topicFilter)&&(reviewFilter!=='due'||!t.nextReview||t.nextReview<=today())).sort((a,b)=>(a.nextReview||'').localeCompare(b.nextReview||''));let chips=`<button class="chip ${topicFilter==='all'?'selected':''}" data-action="filter-subject" data-id="all">All subjects</button>`+data.subjects.map(s=>`<button class="chip ${topicFilter===s.id?'selected':''}" data-action="filter-subject" data-id="${s.id}">${esc(s.name)}</button>`).join('');return header('LEARN IT. KEEP IT.','Topic mastery','Track what you know and schedule the right topics for recall.',btn('+ Add topic','add-topic'))+
 `<div class="filterbar">${chips}</div><div class="panel" style="margin-bottom:22px"><div class="panel-header"><div><h2>Topic library</h2><div class="panel-subtitle">${data.topics.length} total topics · ${dueTopics().length} due for review</div></div><div class="btn-row"><button class="chip ${reviewFilter==='all'?'selected':''}" data-action="filter-review" data-id="all">All</button><button class="chip ${reviewFilter==='due'?'selected':''}" data-action="filter-review" data-id="due">Due now</button></div></div><div class="topic-list">${ts.length?ts.map(t=>`<div class="topic-card">${sDot(t.subjectId)}<div class="topic-info"><strong>${esc(t.name)}</strong><small>${esc(subject(t.subjectId).name)} · ${t.reviewCount||0} reviews</small></div><div class="confidence" title="Confidence: ${t.confidence||0} of 5">${Array.from({length:5},(_,i)=>`<span class="${i<(t.confidence||0)?'filled':''}"></span>`).join('')}</div><div class="topic-meta"><small>Next review</small><b>${t.nextReview&&t.nextReview>today()?prettyDate(t.nextReview):'Due now'}</b></div><div class="btn-row">${btn('Review','review-topic',`data-id="${t.id}"`,'btn small ghost')}${btn('•••','edit-topic',`data-id="${t.id}"`,'btn small secondary')}</div></div>`).join(''):empty('◎','Nothing here yet','Add your first topic and review it from memory.',btn('+ Add topic','add-topic','','btn small'))}</div></div>`;}
