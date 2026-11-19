@@ -30,8 +30,8 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "title": "Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations"
   },
   {
-    "date": "2026-11-19",
-    "time": "21:00",
+    "date": "2026-11-22",
+    "time": "",
     "duration": 50,
     "subject": "Mandarin",
     "title": "Speaking: role-play foundations — questions, requests and clear replies"
