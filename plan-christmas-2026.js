@@ -17,28 +17,21 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
   },
   {
     "date": "2026-11-19",
-    "time": "17:00",
+    "time": "19:00",
     "duration": 60,
     "subject": "Maths",
     "title": "Number: fractions, percentages, standard form and error bounds"
   },
   {
     "date": "2026-11-19",
-    "time": "18:20",
+    "time": "20:10",
     "duration": 40,
     "subject": "Biology",
     "title": "Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations"
   },
   {
     "date": "2026-11-19",
-    "time": "19:20",
-    "duration": 60,
-    "subject": "English Language",
-    "title": "Paper 1 Q2: precise language analysis with 2 developed quotations"
-  },
-  {
-    "date": "2026-11-19",
-    "time": "20:40",
+    "time": "21:00",
     "duration": 50,
     "subject": "Mandarin",
     "title": "Speaking: role-play foundations — questions, requests and clear replies"
@@ -174,7 +167,7 @@ window.REVISION_FLOW_DECEMBER_PLAN_2026 = [
     "time": "19:20",
     "duration": 60,
     "subject": "English Language",
-    "title": "Paper 1 Q4: evaluate a viewpoint with alternative interpretations"
+    "title": "Paper 1 Q2 language analysis and Q4 evaluation — two developed quotations and alternative interpretations"
   },
   {
     "date": "2026-11-25",
