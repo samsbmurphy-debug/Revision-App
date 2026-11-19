@@ -133,6 +133,35 @@ function mergePublishedPlan(){
     data.sessions=data.sessions.filter(x=>!(oldKeys.includes(x.planKey)&&x.status==='planned'&&x.title===title));
     data.nov19MandarinSundayMigration2026=true;save();
   }
+  // Nov 19: only the Maths session was completed. Transfer missed Biology
+  // feedback into the Nov 25 Biology block, and distribute the missed 60m
+  // macroeconomics across two flexible weekend sessions (30m each).
+  // Do not touch completed, active, or manually changed sessions.
+  if(!data.nov19MathsOnlyCatchupMigration2026){
+    const missed=[
+      {key:'christmas-2026:2026-11-19:20:10',title:'Cell biology feedback: mitosis, bacterial DNA, microscopy and osmosis calculations'},
+      {key:'christmas-2026:2026-11-19:flex',title:'Macroeconomics: policy, data and case studies'}
+    ];
+    for(const m of missed){
+      const old=data.sessions.find(s=>s.planKey===m.key && s.title===m.title && s.status==='planned');
+      if(old)data.sessions=data.sessions.filter(s=>s!==old);
+      if(!data.skippedPlanKeys.includes(m.key))data.skippedPlanKeys.push(m.key);
+    }
+    const bio=data.sessions.find(s=>s.planKey==='christmas-2026:2026-11-25:18:00');
+    if(bio && bio.status==='planned' && bio.title==='Infection and response: pathogens, immunity, medicines'){
+      bio.title='Biology consolidation: cell biology corrections (mitosis, bacterial DNA, osmosis and microscopy) + infection and response';
+    }
+    for(const d of ['2026-11-21','2026-11-22']){
+      const key='christmas-2026:'+d+':flex';
+      const econ=data.sessions.find(s=>s.planKey===key && s.status==='planned');
+      const original=d==='2026-11-21'?'Deep research: company analysis and paper portfolio':'Economics reading, analysis and applied questions';
+      if(econ && econ.title===original && econ.duration===120){
+        econ.title=original+' + 30m macroeconomics catch-up';
+        econ.duration=150;
+      }
+    }
+    data.nov19MathsOnlyCatchupMigration2026=true;save();
+  }
   let changed=false;
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
