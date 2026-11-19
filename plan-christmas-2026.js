@@ -993,3 +993,668 @@ window.REVISION_FLOW_PREVIOUS_WEEKENDS_2026 = [
   });
  }
 })();
+
+
+/* New balanced plan. Keep the previous published slots as a read-only snapshot
+   for safe migration of existing device-specific schedules. */
+window.REVISION_FLOW_PRE_REBALANCE_PLAN_2026=window.REVISION_FLOW_DECEMBER_PLAN_2026.map(s=>({...s}));
+window.REVISION_FLOW_DECEMBER_PLAN_2026=window.REVISION_FLOW_DECEMBER_PLAN_2026.filter(s=>s.date<'2026-11-20').concat([
+  {
+    "date": "2026-11-20",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "OPTIONAL Friday — writing corrections and complex grammar"
+  },
+  {
+    "date": "2026-11-20",
+    "time": "17:50",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "OPTIONAL Friday — 30m Grade 9 accuracy challenge"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "16:00",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "LEARN: speaking role-play and picture task foundations before 4 Dec"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "17:20",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "LEARN Paper 2: homeostasis, nervous and endocrine systems"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "18:40",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Macbeth and A Christmas Carol: timed analysis and quotations"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "20:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Grade 9 unfamiliar problems and zero-error checking"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "FLEXIBLE LEARN: Mandarin speaking role-play and spontaneous responses"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "",
+    "duration": 60,
+    "subject": "Economics & Investing",
+    "title": "FLEXIBLE: economics fundamentals and applications"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "FLEXIBLE: 30m Grade 9 Maths challenge"
+  },
+  {
+    "date": "2026-11-23",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 1 Q2 and Q4: precise analysis and evaluation"
+  },
+  {
+    "date": "2026-11-23",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Writing: 90/150-word answers, past tenses and complex clauses"
+  },
+  {
+    "date": "2026-11-23",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "Paper 1: energy, electricity and calculation pitfalls"
+  },
+  {
+    "date": "2026-11-23",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — accuracy and bounds"
+  },
+  {
+    "date": "2026-11-24",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "Paper 1: quantitative chemistry, bonding and atomic structure"
+  },
+  {
+    "date": "2026-11-24",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Macbeth: ambition, guilt, kingship and timed paragraphs"
+  },
+  {
+    "date": "2026-11-24",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Geography",
+    "title": "Natural hazards: tectonic case studies and 9-mark evaluation"
+  },
+  {
+    "date": "2026-11-24",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — algebra"
+  },
+  {
+    "date": "2026-11-25",
+    "time": "18:00",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Cell biology corrections, infection and response, and bioenergetics recall"
+  },
+  {
+    "date": "2026-11-25",
+    "time": "19:20",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — geometry"
+  },
+  {
+    "date": "2026-11-26",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Reading, listening, translation and complex verb accuracy"
+  },
+  {
+    "date": "2026-11-26",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Further Maths",
+    "title": "Polynomial division, quadratics, discriminants and proof"
+  },
+  {
+    "date": "2026-11-26",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Higher: simultaneous equations, inequalities and algebraic fractions"
+  },
+  {
+    "date": "2026-11-26",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — functions and graphs"
+  },
+  {
+    "date": "2026-11-27",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "OPTIONAL Friday — timed Q5 writing with examiner-style marking"
+  },
+  {
+    "date": "2026-11-27",
+    "time": "17:50",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "OPTIONAL Friday — 30m error-log practice"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "16:00",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "LEARN: speaking picture task, role-play and follow-up answers"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "17:20",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "LEARN Paper 2: forces, Newton's laws and motion graphs"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "18:40",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 1 Q5: full narrative and revision of weaknesses"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "20:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Grade 9 multi-step problems and accuracy practice"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "FLEXIBLE LEARN Paper 2: rates, reversible reactions and equilibrium"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "",
+    "duration": 60,
+    "subject": "Economics & Investing",
+    "title": "FLEXIBLE: microeconomics and market reasoning"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "FLEXIBLE: 30m Grade 9 Maths challenge"
+  },
+  {
+    "date": "2026-11-30",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 2: synthesis, evaluation and comparing viewpoints"
+  },
+  {
+    "date": "2026-11-30",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Technology, free time and social issues: writing and translation"
+  },
+  {
+    "date": "2026-11-30",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "Paper 1: particle model, atomic structure and required practicals"
+  },
+  {
+    "date": "2026-11-30",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — quadratics"
+  },
+  {
+    "date": "2026-12-01",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Paper 2: homeostasis, nervous and hormonal control"
+  },
+  {
+    "date": "2026-12-01",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "A Christmas Carol: redemption, poverty and responsibility"
+  },
+  {
+    "date": "2026-12-01",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Geography",
+    "title": "UK coastal landscapes: erosion, management and evaluation"
+  },
+  {
+    "date": "2026-12-01",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — trigonometry"
+  },
+  {
+    "date": "2026-12-02",
+    "time": "18:00",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "Paper 1 energy changes; Paper 2 rates and equilibrium foundations"
+  },
+  {
+    "date": "2026-12-02",
+    "time": "19:20",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — number and proof"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "Speaking mock and final corrections before 4 December assessment"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "School, future plans, speaking and advanced structures"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Higher: quadratics, graphs and functions under timed conditions"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — probability"
+  },
+  {
+    "date": "2026-12-04",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "OPTIONAL Friday — listening, reading and dictation"
+  },
+  {
+    "date": "2026-12-04",
+    "time": "17:50",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "OPTIONAL Friday — 30m mathematical reasoning"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "16:00",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "LEARN: Mandarin grammar, sentence patterns and unfamiliar vocabulary"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "17:20",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "LEARN Paper 2: organic chemistry and chemical analysis"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "18:40",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Power and Conflict poetry: interpretations and comparison"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "20:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Higher: Grade 9 proof and problem solving; zero-error checks"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "FLEXIBLE LEARN Paper 2: inheritance, DNA, meiosis and genetics"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "",
+    "duration": 60,
+    "subject": "Economics & Investing",
+    "title": "FLEXIBLE: microeconomics, applied quantitative questions"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "FLEXIBLE: 30m Grade 9 Maths challenge"
+  },
+  {
+    "date": "2026-12-07",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Power and Conflict poetry: analysis and comparative essays"
+  },
+  {
+    "date": "2026-12-07",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Holidays, travel and festivals: complex writing and recall"
+  },
+  {
+    "date": "2026-12-07",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "Paper 2: forces, waves and quantitative questions"
+  },
+  {
+    "date": "2026-12-07",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — algebra"
+  },
+  {
+    "date": "2026-12-08",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Paper 2: inheritance, natural selection, evolution and classification"
+  },
+  {
+    "date": "2026-12-08",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Paper 2 Q4 and Q5: comparison and persuasive writing"
+  },
+  {
+    "date": "2026-12-08",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Geography",
+    "title": "UK river landscapes: landforms, hydrographs and flood management"
+  },
+  {
+    "date": "2026-12-08",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — vectors"
+  },
+  {
+    "date": "2026-12-09",
+    "time": "18:00",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "Paper 2: chromatography, gas tests and chemical analysis"
+  },
+  {
+    "date": "2026-12-09",
+    "time": "19:20",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — ratios and bounds"
+  },
+  {
+    "date": "2026-12-10",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Timed reading, translation and writing: accuracy and sophistication"
+  },
+  {
+    "date": "2026-12-10",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Further Maths",
+    "title": "Trigonometric equations, differentiation and functions"
+  },
+  {
+    "date": "2026-12-10",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Circle theorems, 3D trigonometry and unfamiliar reasoning"
+  },
+  {
+    "date": "2026-12-10",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — statistics"
+  },
+  {
+    "date": "2026-12-11",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "OPTIONAL Friday — timed Paper 2 writing and feedback"
+  },
+  {
+    "date": "2026-12-11",
+    "time": "17:50",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "OPTIONAL Friday — 30m correction practice"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "16:00",
+    "duration": 60,
+    "subject": "Mandarin",
+    "title": "LEARN: high-grade Chinese grammar, translation and longer writing"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "17:20",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "LEARN Paper 2: magnetism, induction and motors"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "18:40",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Macbeth and A Christmas Carol: timed theme essays"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "20:00",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Grade 9 full-paper-style reasoning and accuracy"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "FLEXIBLE LEARN Paper 2: ecology, biodiversity and sampling"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "",
+    "duration": 60,
+    "subject": "Economics & Investing",
+    "title": "FLEXIBLE: financial literacy and investment analysis"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "FLEXIBLE: 30m Grade 9 Maths challenge"
+  },
+  {
+    "date": "2026-12-14",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "English Language",
+    "title": "Timed Paper 1: Q2–Q5 with stringent marking"
+  },
+  {
+    "date": "2026-12-14",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Mixed Higher: translation, speaking and writing"
+  },
+  {
+    "date": "2026-12-14",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "Paper 2: waves, magnetism and space physics"
+  },
+  {
+    "date": "2026-12-14",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — problem-solving"
+  },
+  {
+    "date": "2026-12-15",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Chemistry",
+    "title": "Paper 2: chemistry of atmosphere and using resources"
+  },
+  {
+    "date": "2026-12-15",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "English Literature",
+    "title": "Unseen poetry, comparison and exam-style analysis"
+  },
+  {
+    "date": "2026-12-15",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Geography",
+    "title": "Urban issues, fieldwork methods and 9-mark evaluation"
+  },
+  {
+    "date": "2026-12-15",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — proof"
+  },
+  {
+    "date": "2026-12-16",
+    "time": "18:00",
+    "duration": 60,
+    "subject": "Biology",
+    "title": "Paper 1/2 consolidation: ecology, required practicals and data skills"
+  },
+  {
+    "date": "2026-12-16",
+    "time": "19:20",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — probability"
+  },
+  {
+    "date": "2026-12-17",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Spanish",
+    "title": "Timed Edexcel Higher mixed skills: writing, listening and reading"
+  },
+  {
+    "date": "2026-12-17",
+    "time": "17:50",
+    "duration": 60,
+    "subject": "Further Maths",
+    "title": "Advanced sequences, differentiation and matrices review"
+  },
+  {
+    "date": "2026-12-17",
+    "time": "19:10",
+    "duration": 60,
+    "subject": "Maths",
+    "title": "Timed Higher mixed questions, examiner-style error log"
+  },
+  {
+    "date": "2026-12-17",
+    "time": "20:30",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "30m Grade 9 Maths challenge — numerical accuracy"
+  },
+  {
+    "date": "2026-12-18",
+    "time": "16:30",
+    "duration": 60,
+    "subject": "Physics",
+    "title": "OPTIONAL Friday — Physics and Chemistry required-practical calculations"
+  },
+  {
+    "date": "2026-12-18",
+    "time": "17:50",
+    "duration": 30,
+    "subject": "Maths",
+    "title": "OPTIONAL Friday — 30m end-of-term Maths review"
+  }
+]);
