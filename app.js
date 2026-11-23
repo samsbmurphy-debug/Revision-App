@@ -175,6 +175,26 @@ function mergePublishedPlan(){
       !s.planKey||s.date<'2026-11-20'||s.status!=='planned'||!matchesOld(s));
     data.nov20BalancedHoursMigration2026=true;save();
   }
+  // November 23 mock feedback: replace only untouched standalone macroeconomics
+  // sessions with GCSE Maths. Preserve microeconomics, investing, edited sessions
+  // and completed work. Older local timetables may still contain these slots.
+  if(!data.nov23MacroToMaths2026){
+    let maths=subjectByName('Maths');
+    const macroSessions=data.sessions.filter(s=>
+      s.status==='planned' &&
+      subject(s.subjectId).name==='Economics & Investing' &&
+      /^Macroeconomics:\s*policy, data and case studies$/i.test(s.title));
+    if(macroSessions.length && !maths){
+      maths={id:uid(),name:'Maths',color:PALETTE[data.subjects.length%PALETTE.length]};
+      data.subjects.push(maths);
+    }
+    for(const s of macroSessions){
+      s.subjectId=maths.id;
+      s.title='GCSE Maths mock improvement: correct lost marks, timed Higher problems and checking';
+    }
+    data.nov23MacroToMaths2026=true;
+    save();
+  }
   let changed=false;
   // Update only untouched, still-planned published sessions after tutor feedback.
   // Preserve completed sessions and any titles the user edited locally.
